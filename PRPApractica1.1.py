@@ -58,7 +58,7 @@ def finProceso(storage, mutex,listaFinal):
     mutex.acquire()
     products = True
     i = 0
-    while products and (i < len(storage) or len(listaFinal)<numProductos):#termino si todos los procesos han terminado 
+    while products and i < len(storage):#termino si todos los procesos han terminado 
         products = products and storage[i] == -1
         i = i + 1
     mutex.release()
